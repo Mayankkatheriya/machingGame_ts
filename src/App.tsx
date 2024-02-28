@@ -1,4 +1,3 @@
-import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Intro1 from './components/Intro1';
 import Intro2 from './components/Intro2';
