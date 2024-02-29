@@ -20,9 +20,7 @@ const Result: React.FC = () => {
 
   return (
     <>
-      {/* Progress component to display the user's progress */}
       <Progress />
-      {/* Container styled component to center the result card */}
       <Container>
         {/* ResultCard styled component for the result card layout */}
         <ResultCard>

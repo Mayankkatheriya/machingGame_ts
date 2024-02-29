@@ -4,7 +4,7 @@ import scoreReducer from './scoreSlice';
 // Configure the Redux store with the scoreReducer
 export const store = configureStore({
   reducer: {
-    scores: scoreReducer, // Use the scoreReducer to manage the 'scores' state
+    scores: scoreReducer,
   },
 });
 

@@ -8,33 +8,16 @@ import { store } from './store/store';
 import { Provider } from 'react-redux';
 import Result from './components/Result';
 
+// Main App component
 function App() {
   // Create the routes for the application
   const routes = createBrowserRouter([
-    {
-      path: '/',
-      element: <Intro1 />, // Render Intro1 component when the path is "/"
-    },
-    {
-      path: '/intro2',
-      element: <Intro2 />, // Render Intro2 component when the path is "/intro2"
-    },
-    {
-      path: '/intro3',
-      element: <Intro3 />, // Render Intro3 component when the path is "/intro3"
-    },
-    {
-      path: '/instructions',
-      element: <Instructions />, // Render Instructions component when the path is "/instructions"
-    },
-    {
-      path: '/activity',
-      element: <Activity />, // Render Activity component when the path is "/activity"
-    },
-    {
-      path: '/result',
-      element: <Result />, // Render Result component when the path is "/result"
-    },
+    { path: '/', element: <Intro1 /> },
+    { path: '/intro2', element: <Intro2 /> },
+    { path: '/intro3', element: <Intro3 /> },
+    { path: '/instructions', element: <Instructions /> },
+    { path: '/activity', element: <Activity /> },
+    { path: '/result', element: <Result /> },
   ]);
 
   return (

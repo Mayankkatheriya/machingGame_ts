@@ -15,7 +15,7 @@ import MatchedText from "./common/MatchedText";
 const Activity: React.FC = () => {
   const dispatch = useDispatch();
   const [imageData, setImageData] = useState<Fruit[]>([]);
-const [lettersData, setLettersData] = useState<Fruit[]>([]);
+  const [lettersData, setLettersData] = useState<Fruit[]>([]);
   const [flippedPinkCard, setFlippedPinkCard] = useState<string | null>(null);
   const [flippedBlueCard, setFlippedBlueCard] = useState<string | null>(null);
   const [matchedPairs, setMatchedPairs] = useState<string[]>([]);
@@ -51,8 +51,8 @@ const [lettersData, setLettersData] = useState<Fruit[]>([]);
     }
   }, [isMatchedAnimation]);
 
+  // Start timer countdown when all cards have
   useEffect(() => {
-    // Start timer countdown when all cards have
     const intervalId = setInterval(() => {
       setTimer(timer - 1);
     }, 1000);
@@ -100,14 +100,11 @@ const [lettersData, setLettersData] = useState<Fruit[]>([]);
 
   return (
     <>
-      {/* Progress component to display the user's progress */}
       <Progress />
-      {/* BackButton component for navigation to the previous screen */}
       <BackButton route="/instructions" />
       <TimerContainer>
         <p>Time Remaining: {String(timer).padStart(2, "0")}s</p>
       </TimerContainer>
-      {/* Container styled component to center the card grids */}
       <Container>
         {/* CardContainer styled component for pink cards */}
         <CardContainer>
@@ -136,7 +133,6 @@ const [lettersData, setLettersData] = useState<Fruit[]>([]);
           ))}
         </CardContainer>
       </Container>
-      {/* Conditionally render MatchedText component */}
       {isMatchedAnimation && <MatchedText />}
     </>
   );

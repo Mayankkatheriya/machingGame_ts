@@ -11,29 +11,27 @@ interface CardProps {
   type: string;
   isFlipped: boolean;
   isMatched: boolean;
-  onCardClick: (cardId: string, cardType: string) => void; // Update the callback signature
+  onCardClick: (cardId: string, cardType: string) => void;
 }
 
 // Card component for rendering game cards
 const Card: React.FC<CardProps> = ({ data, type, isFlipped, isMatched, onCardClick }) => {
-  // Function to handle card click
+  
   const handleCardClick = () => {
     // Check if the card is not flipped and not matched
     if (!isFlipped && !isMatched) {
-      // Call the onCardClick callback with card id and type
       onCardClick(data.id, type);
     }
   };
 
   return (
-    // Container for the card with onClick event handler
     <Container onClick={handleCardClick} isFlipped={isFlipped} isMatched={isMatched}>
       {/* Front of the card */}
       <img src={`${type}Card.png`} alt="" className="front" />
+
       {/* Back of the card */}
       <div className="back">
         <img src={`plain${type}Card.png`} alt="" className="backCard" />
-        {/* Render additional content if the card is flipped */}
         {isFlipped && (
           <>
             {type === 'pink' ? (

@@ -10,9 +10,7 @@ import InstructCard from './common/InstructCard';
 const Instructions: React.FC = () => {
   return (
     <>
-      {/* Progress component to display the user's progress */}
       <Progress />
-      {/* CardContainer styled component to contain instruction cards */}
       <CardContainer>
         {/* InstructCard component for pink card instructions */}
         <InstructCard card="pink" number={1} text1="Select a pink card." text2="It has images." />
@@ -21,9 +19,7 @@ const Instructions: React.FC = () => {
         {/* InstructCard component for match instructions */}
         <InstructCard card="group" number={3} text1="It's a match!" text2="Otherwise retry :(" text3="If they’re the same" />
       </CardContainer>
-      {/* BackButton component for navigation to the previous screen */}
       <BackButton route='/intro3' />
-      {/* BottomButton component for navigation to the next screen */}
       <BottomButton route="/activity" src="play" />
     </>
   );

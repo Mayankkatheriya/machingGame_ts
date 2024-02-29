@@ -7,9 +7,7 @@ import BottomButton from './common/BottomButton';
 const Intro1: React.FC = () => {
   return (
     <>
-      {/* Monkey component with a welcome message */}
       <Monkey text="Welcome Kiddo!" />
-      {/* BottomButton component for navigation to the next screen */}
       <BottomButton route="/intro2" src='start' />
     </>
   );
