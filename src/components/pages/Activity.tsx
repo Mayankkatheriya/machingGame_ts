@@ -38,7 +38,7 @@ const Activity: React.FC = () => {
     if (score === 6) {
       setTimeout(() => {
         navigate("/result");
-      }, 1200);
+      }, 1000);
     }
   }, [score]);
 
@@ -47,7 +47,7 @@ const Activity: React.FC = () => {
     if (isMatchedAnimation) {
       setTimeout(() => {
         setIsMatchedAnimation(false);
-      }, 1500);
+      }, 1200);
     }
   }, [isMatchedAnimation]);
 
@@ -80,7 +80,7 @@ const Activity: React.FC = () => {
         if (flippedPinkCard !== null && flippedPinkCard === cardId) {
           setTimeout(() => {
             setMatchedPairs([...matchedPairs, cardId]);
-          }, 1000);
+          }, 700);
           dispatch(setScore(score + 1));
           console.log("Match! Score:", score + 1);
           setIsMatchedAnimation(true);
@@ -90,7 +90,7 @@ const Activity: React.FC = () => {
         setTimeout(() => {
           setFlippedPinkCard(null);
           setFlippedBlueCard(null);
-        }, 1000);
+        }, 700);
       }
     }
   };
