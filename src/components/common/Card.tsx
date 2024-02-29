@@ -1,7 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { StyleSheetManager } from 'styled-components';
 
-// Define types for the Card props
 interface CardProps {
   data: {
     id: string;
@@ -14,11 +13,8 @@ interface CardProps {
   onCardClick: (cardId: string, cardType: string) => void;
 }
 
-// Card component for rendering game cards
 const Card: React.FC<CardProps> = ({ data, type, isFlipped, isMatched, onCardClick }) => {
-  
   const handleCardClick = () => {
-    // Check if the card is not flipped and not matched
     if (!isFlipped && !isMatched) {
       onCardClick(data.id, type);
     }
@@ -26,10 +22,7 @@ const Card: React.FC<CardProps> = ({ data, type, isFlipped, isMatched, onCardCli
 
   return (
     <Container onClick={handleCardClick} isFlipped={isFlipped} isMatched={isMatched}>
-      {/* Front of the card */}
       <img src={`${type}Card.png`} alt="" className="front" />
-
-      {/* Back of the card */}
       <div className="back">
         <img src={`plain${type}Card.png`} alt="" className="backCard" />
         {isFlipped && (
@@ -46,7 +39,6 @@ const Card: React.FC<CardProps> = ({ data, type, isFlipped, isMatched, onCardCli
   );
 };
 
-// Styled component for the card container
 const Container = styled.div<{ isFlipped: boolean; isMatched: boolean }>`
   width: 150px;
   height: 200px;
@@ -105,4 +97,12 @@ const Container = styled.div<{ isFlipped: boolean; isMatched: boolean }>`
   }
 `;
 
-export default Card;
+const StyledCard: React.FC<CardProps> = ({ ...props }) => {
+  return (
+    <StyleSheetManager shouldForwardProp={(prop) => prop !== 'isFlipped' && prop !== 'isMatched'}>
+      <Card {...props} />
+    </StyleSheetManager>
+  );
+};
+
+export default StyledCard;
