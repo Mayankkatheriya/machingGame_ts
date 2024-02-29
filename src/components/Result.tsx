@@ -20,6 +20,7 @@ const Result: React.FC = () => {
 
   return (
     <>
+      <Overlay></Overlay>
       <Progress />
       <Container>
         {/* ResultCard styled component for the result card layout */}
@@ -29,7 +30,7 @@ const Result: React.FC = () => {
             <p>Earned</p>
             <p>{score} Banana's</p>
           </div>
-          <img src="/happyMonkey.png" alt="" className="monkeyImg" />
+          <img src="/happyMonkey2.png" alt="" className="monkeyImg" />
           {/* Restart button with an onClick handler to restart the game */}
           <img src="/restart.png" alt="" className="restartbtn" onClick={restartGame} />
         </ResultCard>
@@ -99,4 +100,13 @@ const ResultCard = styled.div`
   }
 `;
 
+const Overlay = styled.div`
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #00000060;
+  z-index: -1;
+`;
 export default Result;
