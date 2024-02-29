@@ -151,6 +151,7 @@ const Container = styled.div`
 const CardContainer = styled.div`
   padding: 2em;
   width: 50%;
+  max-width: 600px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
