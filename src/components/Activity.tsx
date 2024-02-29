@@ -19,6 +19,7 @@ const [lettersData, setLettersData] = useState<Fruit[]>([]);
   const [flippedPinkCard, setFlippedPinkCard] = useState<string | null>(null);
   const [flippedBlueCard, setFlippedBlueCard] = useState<string | null>(null);
   const [matchedPairs, setMatchedPairs] = useState<string[]>([]);
+  const [timer, setTimer] = useState<number>(30); // Added timer state
   const [isMatchedAnimation, setIsMatchedAnimation] = useState(false);
   const score = useSelector(selectScore);
   const navigate = useNavigate();
@@ -49,6 +50,19 @@ const [lettersData, setLettersData] = useState<Fruit[]>([]);
       }, 1500);
     }
   }, [isMatchedAnimation]);
+
+  useEffect(() => {
+    // Start timer countdown when all cards have
+    const intervalId = setInterval(() => {
+      setTimer(timer - 1);
+    }, 1000);
+
+    if (timer === 0) {
+      clearInterval(intervalId);
+      navigate("/result");
+    }
+    return () => clearInterval(intervalId);
+  }, [timer]);
 
   // Handle card click and check for matches
   const handleCardClick = (cardId: string, cardType: string) => {
@@ -90,6 +104,9 @@ const [lettersData, setLettersData] = useState<Fruit[]>([]);
       <Progress />
       {/* BackButton component for navigation to the previous screen */}
       <BackButton route="/instructions" />
+      <TimerContainer>
+        <p>Time Remaining: {String(timer).padStart(2, "0")}s</p>
+      </TimerContainer>
       {/* Container styled component to center the card grids */}
       <Container>
         {/* CardContainer styled component for pink cards */}
@@ -143,6 +160,20 @@ const CardContainer = styled.div`
   gap: 1rem;
   flex-wrap: wrap;
   position: relative;
+`;
+
+const TimerContainer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+
+  p {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #8ead28;
+  }
 `;
 
 export default Activity;
