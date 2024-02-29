@@ -106,7 +106,7 @@ const Overlay = styled.div`
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: #00000060;
+  background-color: #00000092;
   z-index: -1;
 `;
 export default Result;
