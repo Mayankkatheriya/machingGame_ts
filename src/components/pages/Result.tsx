@@ -1,8 +1,8 @@
 import React from "react";
-import Progress from "./common/Progress";
+import Progress from "../common/Progress";
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
-import { selectScore, setScore } from "../store/scoreSlice";
+import { selectScore, setScore } from "../../store/scoreSlice";
 import { useNavigate } from "react-router-dom";
 
 // Result component to display the user's score and allow them to restart the game

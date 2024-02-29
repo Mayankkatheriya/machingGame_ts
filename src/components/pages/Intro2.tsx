@@ -1,7 +1,7 @@
 import React from "react";
-import Monkey from "./common/Monkey";
-import BottomButton from "./common/BottomButton";
-import BackButton from "./common/BackButton";
+import Monkey from "../common/Monkey";
+import BottomButton from "../common/BottomButton";
+import BackButton from "../common/BackButton";
 
 // Intro2 component for the second introduction screen
 

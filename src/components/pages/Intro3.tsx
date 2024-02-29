@@ -1,8 +1,8 @@
 import React from "react";
-import Monkey from "./common/Monkey";
-import BottomButton from "./common/BottomButton";
-import Progress from "./common/Progress";
-import BackButton from "./common/BackButton";
+import Monkey from "../common/Monkey";
+import BottomButton from "../common/BottomButton";
+import Progress from "../common/Progress";
+import BackButton from "../common/BackButton";
 
 // Intro3 component for the third introduction screen
 

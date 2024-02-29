@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
-import Progress from "./common/Progress";
-import BackButton from "./common/BackButton";
+import Progress from "../common/Progress";
+import BackButton from "../common/BackButton";
 import styled from "styled-components";
-import { Fruit, fruitsData } from './common/fruitsData';
-import { shuffleArray } from './common/shuffle';
-import Card from "./common/Card";
+import { Fruit, fruitsData } from '../common/fruitsData';
+import { shuffleArray } from '../common/shuffle';
+import Card from "../common/Card";
 import { useDispatch, useSelector } from "react-redux";
-import { selectScore, setScore } from "../store/scoreSlice";
+import { selectScore, setScore } from "../../store/scoreSlice";
 import { useNavigate } from "react-router-dom";
-import MatchedText from "./common/MatchedText";
+import MatchedText from "../common/MatchedText";
 
 // Activity component for the main game screen
 

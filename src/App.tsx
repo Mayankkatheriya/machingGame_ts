@@ -1,12 +1,12 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Intro1 from './components/Intro1';
-import Intro2 from './components/Intro2';
-import Intro3 from './components/Intro3';
-import Instructions from './components/Instructions';
-import Activity from './components/Activity';
+import Intro1 from './components/pages/Intro1';
+import Intro2 from './components/pages/Intro2';
+import Intro3 from './components/pages/Intro3';
+import Instructions from './components/pages/Instructions';
+import Activity from './components/pages/Activity';
 import { store } from './store/store';
 import { Provider } from 'react-redux';
-import Result from './components/Result';
+import Result from './components/pages/Result';
 
 // Main App component
 function App() {

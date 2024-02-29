@@ -1,9 +1,9 @@
 import React from 'react';
-import BottomButton from "./common/BottomButton";
-import Progress from "./common/Progress";
-import BackButton from "./common/BackButton";
+import BottomButton from "../common/BottomButton";
+import Progress from "../common/Progress";
+import BackButton from "../common/BackButton";
 import styled from 'styled-components';
-import InstructCard from './common/InstructCard';
+import InstructCard from '../common/InstructCard';
 
 // Instructions component providing guidance to the user
 

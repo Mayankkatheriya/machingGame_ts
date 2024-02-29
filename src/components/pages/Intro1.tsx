@@ -1,6 +1,6 @@
 import React from 'react';
-import Monkey from './common/Monkey';
-import BottomButton from './common/BottomButton';
+import Monkey from '../common/Monkey';
+import BottomButton from '../common/BottomButton';
 
 // Intro1 component for the first introduction screen
 
