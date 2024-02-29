@@ -13,7 +13,10 @@ const Progress: React.FC = () => {
     // Container for the progress bar
     <Container>
       {/* Progress bar with width based on the user's score */}
-      <div className="progress" style={{ width: `${(score / 6) * 100}%` }}></div>
+      <div
+        className="progress"
+        style={{ width: `${(score / 6) * 100}%` }}
+      ></div>
       {/* Banana image, showing different images based on the score */}
       <img src={score === 6 ? "banana-3.png" : "banana-2.png"} alt="" />
     </Container>
@@ -37,7 +40,14 @@ const Container = styled.div`
     height: 100%;
     width: 0%;
     transition: all 0.2s ease-in-out;
-    background-color: #ffcf25;
+    background-image: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 19px,
+      #ffcf25 19px,
+      #ffcf25 38px
+    );
+    background-color: #fce492;
   }
 
   // Styled component for the banana image
